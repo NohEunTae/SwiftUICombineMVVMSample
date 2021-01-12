@@ -9,11 +9,13 @@ import Combine
 
 final class ViewModel: ObservableObject  {
     
+    // Related Input
     private let currentPage = CurrentValueSubject<Int, Never>(1)
     let filter = CurrentValueSubject<Filter, Never>(.newest)
     let purchaseTap = PassthroughSubject<Void, Never>()
     let likeTap = PassthroughSubject<Void, Never>()
     
+    // Related Output
     @Published private(set) var items: [Data] = []
     @Published private(set) var like: Bool = false
     @Published var showingPurchageAlert = false
